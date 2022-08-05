@@ -3,5 +3,5 @@
 
 ## Links
 
-| Ryan Okamoto | <a href="" target="_blank">Rocks-R-Us</a> | <a href="https://trello.com/b/5xY8u85J/rocks-r-us" target="_blank">Planning (Trello)</a> | <a href="" target="_blank">ERD</a> | <a href="https://lucid.app/lucidchart/92c36693-1898-42c0-a91d-71a93578fa61/edit?viewport_loc=-11%2C-11%2C3072%2C1555%2C0_0&invitationId=inv_78018bf9-7729-4beb-bc20-e89ce6af97ab#" target="_blank">WireFrame </a> |
+| Ryan Okamoto | <a href="" target="_blank">Rocks-R-Us</a> | <a href="https://trello.com/b/5xY8u85J/rocks-r-us" target="_blank">Planning (Trello)</a> | <a href="https://lucid.app/lucidchart/90861ef8-d53f-4a82-bcaa-9c3896bb927b/edit?view_items=h6eFtXhLibnB&invitationId=inv_b61d4056-0342-45b0-bf21-8beac0c8d6c9#" target="_blank">ERD</a> | <a href="https://lucid.app/lucidspark/958439e2-1b8f-45ad-ae1c-90792925f681/edit?beaconFlowId=B0AB0DF58BAAB0B4&invitationId=inv_3229d6c8-1d8d-4aeb-a550-7d00754b9f2b#" target="_blank">WireFrame </a> |
 |---|:---:|:---:|:---:|:---:|
