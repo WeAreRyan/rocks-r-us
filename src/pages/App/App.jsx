@@ -1,4 +1,5 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
@@ -7,6 +8,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import NewOrderPage from "../NewOrderPage/newOrderPage";
 import RocksListPage from "../RocksListPage/RocksListPage";
+import OrderHistoryPage from "../../pages/OrderHistoryPage/OrderHistoryPage"
 import Cart from "../../components/Cart/Cart";
 
 export default function App() {
@@ -16,21 +18,24 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(function () {
-    // pulls current user order, set it to 'cart'
     async function getCart() {
-      const cart = await ordersAPI.getCart();
-      setCart(cart);
+      const cartData = await ordersAPI.getCart();
+      setCart(cartData);
     }
     getCart();
-  }, []);
+  },[setCart]);
 
   function cartToggle() {
-    console.log("cartoggle");
     if (showCart) {
       setShowCart(null);
     } else {
       setShowCart(true);
     }
+  }
+
+  async function handleAddToOrder(orderItem) {
+    const updatedCart = await ordersAPI.addItemToCart(orderItem); // itemId
+    setCart(updatedCart);
   }
 
   // checkout function, sets order status to isPaid: true
@@ -53,13 +58,17 @@ export default function App() {
           <Routes>
             <Route
               path="/rocks"
-              element={<RocksListPage user={user} setUser={setUser} />}
+              element={!showCart && <RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} />}
             />
             <Route
               path="/orders/new"
-              element={<NewOrderPage user={user} setUser={setUser} />}
+              element={!showCart && <NewOrderPage user={user} setUser={setUser} />}
             />
-            <Route path="/*" element={<Navigate to="/rocks" />} />
+            <Route
+              path="/orders/history"
+              element={!showCart && <OrderHistoryPage user={user} setUser={setUser} />}
+            />
+            <Route path="/*" element= {<Navigate to="/rocks" />} />
           </Routes>
           {showCart && <Cart order={cart} handleCheckout={handleCheckout} />}
         </>

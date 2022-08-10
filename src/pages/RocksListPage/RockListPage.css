@@ -1,0 +1,9 @@
+.rockList {
+    display: inline-grid;
+    width: fill;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 10px;
+  }

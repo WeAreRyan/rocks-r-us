@@ -1,44 +1,67 @@
-import { useState } from 'react';
-import * as usersService from '../../utilities/users-service';
+import "./LoginForm.css"
+import { useState } from "react";
+import * as usersService from "../../utilities/users-service";
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
-    setError('');
+    setError("");
   }
 
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {
-      setError('Log In Failed - Try Again');
+      setError("Log In Failed - Try Again");
     }
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
+    <div className="">
+    <div className="d-inline-flex Auth-form-container">
+      <form className="Auth-form" autoComplete="off" onSubmit={handleSubmit}>
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign In</h3>
+          <div className="form-group mt-3">
+            <label>Email address</label>
+            <input
+              type="text"
+              name="email"
+              className="form-control mt-1"
+              placeholder="Enter email"
+              value={credentials.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              className="form-control mt-1"
+              placeholder="Enter password"
+              value={credentials.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
     </div>
   );
 }

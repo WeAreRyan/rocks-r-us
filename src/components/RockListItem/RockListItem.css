@@ -1,3 +1,33 @@
+.rockCard {
+    display: -moz-grid;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 1rem 0.6rem;
+    border: 0.5rem solid rgba(145, 3, 3);
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .movieTitle {
+    color: #e6e6e6;
+    -webkit-text-stroke: 0.5px black;
+    text-decoration: none;
+  }
+  
+  .movieDate {
+    position: absolute;
+    top: 86%;
+    left: 20%;
+    text-decoration: none;
+    color: #e6e6e6;
+    -webkit-text-stroke: 0.5px black;
+  }
+
+
 .rockPicture {
     height: 100px;
     width: 150px;

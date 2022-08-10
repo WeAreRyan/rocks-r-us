@@ -1,12 +1,13 @@
 import sendRequest from './send-request';
-
+const BASE_URL = '/api/orders';
 
 export function getCart() {
     return sendRequest(`${BASE_URL}/cart`);
   }
 
-export function addItemToCart(itemId) {
-    return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST');
+export function addItemToCart(orderItem) { //itemId
+  console.log(orderItem)
+    return sendRequest(`${BASE_URL}/cart/items/${orderItem.rockId}`, 'POST', orderItem); //itemId
   }
 
 // Updates the order's (cart's) isPaid property to true
@@ -15,4 +16,6 @@ export function checkout() {
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
 
-const BASE_URL = '/api/orders';
+export function getOrderHistory() {
+  return sendRequest(`${BASE_URL}/history`)
+}

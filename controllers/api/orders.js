@@ -1,11 +1,13 @@
 const Order = require("../../models/order");
 const Item = require("../../models/item");
+const order = require("../../models/order");
 
 module.exports = {
   cart,
   addToCart, 
   setItemQtyInCart, 
-  checkout
+  checkout, 
+  orderHistory
 };
 
 // Creates new cart
@@ -16,9 +18,8 @@ async function cart(req, res) {
 
 // Adds item to the user cart
 async function addToCart(req, res) {
-  console.log("controllers > orders > addToCart fired");
   const cart = await Order.getCart(req.user._id);
-  await cart.addItemToCart(req.params.id);
+  await cart.addItemToCart(req.body); //req.params
   res.json(cart);
 }
 
@@ -35,4 +36,13 @@ async function checkout(req, res) {
   cart.isPaid = true;
   await cart.save();
   res.json(cart);
+}
+
+// Pulls all orders in a user's history
+async function orderHistory(req, res) {
+//  const orders = await Order.findAll({order.user === req.user._id && order.isPaid === true}.exec())
+ const orders = await Order.find({}).exec()   //order => order.user === req.user._id && order.isPaid === true
+ orders.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+ console.log(orders)
+ res.json(cart)
 }

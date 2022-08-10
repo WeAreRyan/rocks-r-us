@@ -1,3 +1,4 @@
+import './RockListPage.css'
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,11 +7,11 @@ import * as ordersAPI from "../../utilities/orders-api";
 // import * as ordersAPI from "../../utilities/orders-api";
 // import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import RockList from "../../components/RockList/RockList";
+// import { eventNames } from '../../../models/rockType';
 
 
-export default function RocksListPage({ user, setUser }) {
+export default function RocksListPage({ user, setUser, handleAddToOrder, setCart }) {
   const [rockItems, setRockItems] = useState([]);
-  const [cart, setCart] = useState(null);
 
   
   useEffect(function () {
@@ -28,20 +29,16 @@ export default function RocksListPage({ user, setUser }) {
     getCart();
   }, []);
 
-async function handleAddToOrder(itemId) {
-  const updatedCart = await ordersAPI.addItemToCart(itemId);
-  setCart(updatedCart);
-}
-
 
 
   return (
     <>
       <h2>RocksListPage</h2>
+      <div className="rockList">
       <RockList rockItems={rockItems}
       handleAddToOrder={handleAddToOrder}
        />
-  
+      </div>
     </>
   );
 }

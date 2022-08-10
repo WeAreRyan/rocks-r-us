@@ -6,7 +6,6 @@ module.exports = {
 };
 
 async function index(req, res) {
-  console.log('items index func')
   // populate rock type on return
   const items = await Item.find({}).sort('name').populate('rockType').exec();
   res.json(items);

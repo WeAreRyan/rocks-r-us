@@ -13,6 +13,8 @@ export default function NavBar({ user, setUser, showCart, cartToggle }) {
       &nbsp; | &nbsp;
       <Link to="" onClick={cartToggle}>{!showCart ? "Show Cart" : "Hide Cart"}</Link>
       &nbsp; | &nbsp;
+      <Link to="./orders/history">View Order History</Link>
+      &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>
         Log Out
       </Link>
