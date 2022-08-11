@@ -1,6 +1,5 @@
 const Order = require("../../models/order");
 const Item = require("../../models/item");
-const order = require("../../models/order");
 
 module.exports = {
   cart,
@@ -39,10 +38,10 @@ async function checkout(req, res) {
 }
 
 // Pulls all orders in a user's history
+
+
 async function orderHistory(req, res) {
-//  const orders = await Order.findAll({order.user === req.user._id && order.isPaid === true}.exec())
- const orders = await Order.find({}).exec()   //order => order.user === req.user._id && order.isPaid === true
+ const orders = await Order.find({user: req.user._id, isPaid: true}).exec()   
  orders.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
- console.log(orders)
- res.json(cart)
+ res.json(orders)
 }

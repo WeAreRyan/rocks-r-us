@@ -16,23 +16,24 @@ export default function RockListItem({ rock, handleAddToOrder }) {
   }
     return (
     <Card className="rockCard">
-      <form onSubmit={addToOrder}>
+      <form className="form-group mt-2" onSubmit={addToOrder}>
         <div>{rock.name}</div>
         <div>{rock.rockType.name}</div>
         <img className="rockPicture" src={rock.img} />
         <div>${rock.price.toFixed(2)} lb</div>
-        <input
+          <label>Quantity in pounds</label>
+          <input
+        className="rockQtyInput"
         type="number"
         value={rockQty}
         onChange={(evt) => setNewRockQty(evt.target.value)}
          />
-          <label>Quantity in pounds</label>
-        
         <input
         value={rockId}
         readOnly
-        type=''></input>
-        <Button type="submit" className="btn-md">
+        type='hidden'></input>
+        <br />
+        <Button type="submit" className="btn-md p-3 mt-3 mb-3">
           ADD TO CART
         </Button>
         </form>

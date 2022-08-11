@@ -1,18 +1,28 @@
 import { useState, useEffect, useRef } from "react";
-import { getOrderHistory } from "../../utilities/orders-api"
+import { getOrderHistory } from "../../utilities/orders-api";
+import OrderHistory from "../../components/OrderHistory/OrderHistory";
+import PaidOrder from "../../components/PaidOrder/PaidOrder"
 
 export default function OrderHistoryPage() {
-    const [ orders, setOrders ] = useState();
-    
-    useEffect(function() {
-        async function orderHistory() {
-        const orders = await getOrderHistory()
-        setOrders(orders)
-        }
-        orderHistory()
-    }, [])
+  const [orders, setOrders] = useState();
 
-    console.log(orders)
+  useEffect(function () {
+    // pulls all orders associated with logged in user with isPaid == true
+    async function orderHistory() {
+      const history = await getOrderHistory();
+      setOrders(history);
+    }
+    orderHistory();
+  }, []);
+console.log(orders)
 
-    return <h2>Order History Page</h2>
+
+  return (
+    <>
+      <h2>Order History Page</h2>
+      {orders.map((order) => (
+        <PaidOrder key={order._id} order={order} />
+      ))}
+    </>
+  );
 }

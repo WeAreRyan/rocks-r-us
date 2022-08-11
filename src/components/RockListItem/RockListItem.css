@@ -1,34 +1,40 @@
-.rockCard {
-    display: -moz-grid;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5rem;
-    padding: 1rem 0.6rem;
-    border: 0.5rem solid rgba(145, 3, 3);
-    border-radius: 1rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    position: relative;
-    text-decoration: none;
-  }
-  
-  .movieTitle {
-    color: #e6e6e6;
-    -webkit-text-stroke: 0.5px black;
-    text-decoration: none;
-  }
-  
-  .movieDate {
-    position: absolute;
-    top: 86%;
-    left: 20%;
-    text-decoration: none;
-    color: #e6e6e6;
-    -webkit-text-stroke: 0.5px black;
-  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
+.rockCard {
+  background-image: linear-gradient(45deg, #4f3364, #989143);
+  display: -moz-grid;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border: 0.5rem solid rgba(145, 3, 3);
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+}
 
 .rockPicture {
-    height: 100px;
-    width: 150px;
+  margin-top: 10%;
+  border: 0.3rem solid black
+  ;
+  border-radius: 1rem;
+  height: 160px;
+  width: 85%;
+}
+
+.addToCartBtn {
+  padding: 5px;
+}
+
+.rockQtyInput {
+  width: 30%;
 }
