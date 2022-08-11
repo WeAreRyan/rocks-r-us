@@ -1,5 +1,11 @@
 main {
   background-image: linear-gradient(45deg, #989143, #4F3364);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
 }
 
 .App {

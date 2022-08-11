@@ -3,8 +3,11 @@ require("./config/database");
 
 const RockType = require("./models/rockType");
 const Item = require("./models/item");
+const Order = require("./models/order");
 
 (async function () {
+
+  await Order.deleteMany({});
   await RockType.deleteMany({});
   const rockTypes = await RockType.create([
     { name: "Igneous" },
@@ -81,7 +84,7 @@ const Item = require("./models/item");
       name: "Sandstone",
       img: "https://i.imgur.com/ScQLa5U.jpg",
       rockType: rockTypes[1],
-      price: 0.20,
+      price: 0.2,
     },
     {
       name: "Arkose",
@@ -166,7 +169,7 @@ const Item = require("./models/item");
       name: "Amphibolite",
       img: "https://i.imgur.com/RaIPeJ0.jpg",
       rockType: rockTypes[2],
-      price: 2.70,
+      price: 2.7,
     },
     {
       name: "Slate",
@@ -204,7 +207,6 @@ const Item = require("./models/item");
       rockType: rockTypes[2],
       price: 16.87,
     },
-
   ]);
 
   console.log(items);

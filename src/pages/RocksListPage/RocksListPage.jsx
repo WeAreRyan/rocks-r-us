@@ -33,7 +33,7 @@ export default function RocksListPage({ user, setUser, handleAddToOrder, setCart
 
   return (
     <>
-      <div className="lotsOfRocks">RocksListPage</div>
+      <div className="lotsOfRocks">LOOK AT ALL THESE ROCKS!!!</div>
       <div className="rockList">
       <RockList rockItems={rockItems}
       handleAddToOrder={handleAddToOrder}

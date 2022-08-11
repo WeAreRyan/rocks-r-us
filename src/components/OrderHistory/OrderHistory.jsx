@@ -7,8 +7,7 @@ export default function OrderHistory( {orders} ) {
 
   return(
     <>
-    <h2>order history component</h2>
     {userOrderHistory}
     </>
   )
-}
+} 

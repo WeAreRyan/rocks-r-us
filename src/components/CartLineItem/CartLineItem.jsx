@@ -40,7 +40,7 @@ export default function CartLineItem({ lineItem, isPaid, handleAddToOrder, setCa
           />
           <input value={rockId} readOnly type="hidden" />
           <br />
-          <Button type="submit" className="btn-md p-3 mt-3 mb-3">
+          <Button type="submit" className="btn-md btn-success p-3 mt-3 mb-3">
             UpdateTotal
           </Button>
         </form>

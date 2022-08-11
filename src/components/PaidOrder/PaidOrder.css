@@ -1,0 +1,17 @@
+.paidOrderBox {
+display: inline-grid;
+  /* position: center; */
+  background: white;
+  margin: 1rem 4rem 1rem 4rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(10rem);
+  grid-gap: 1rem;
+  border: 0.7rem solid rgba(145, 3, 3);
+  border-radius: 1rem;
+}
+
+.orderInfo {
+  position: top;
+  align-items: center;
+}
