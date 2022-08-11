@@ -18,9 +18,9 @@ export default function NavBar({ user, setUser, showCart, cartToggle }) {
       <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="/" style={{marginLeft : 50, marginTop : 10, marginBottom : 10}} >Rocks-R-Us</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Checkout These Rocks</Nav.Link>
+            <Nav.Link href="/rocks">Checkout These Rocks</Nav.Link>
             <Nav.Link onClick={cartToggle}>{!showCart ? "Show Cart" : "Hide Cart"}</Nav.Link>
-            <Nav.Link href="" onClick={handleLogOut}>Order History</Nav.Link>
+            <Nav.Link href="/orders/history">Order History</Nav.Link>
             <Nav.Link className="ml-auto" href="" onClick={handleLogOut}>LogOut</Nav.Link>
           </Nav>
       </Navbar>

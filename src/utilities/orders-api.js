@@ -10,6 +10,11 @@ export function addItemToCart(orderItem) { //itemId
     return sendRequest(`${BASE_URL}/cart/items/${orderItem.rockId}`, 'POST', orderItem); //itemId
   }
 
+export function updateCartItem(orderItem) {
+  console.log(orderItem)
+  return sendRequest(`${BASE_URL}/cart/update`, 'POST', orderItem); //itemId
+}
+
 // Updates the order's (cart's) isPaid property to true
 export function checkout() {
   // Changing data on the server, so make it a POST request

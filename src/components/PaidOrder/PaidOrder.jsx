@@ -3,9 +3,8 @@ export default function PaidOrder( {order} ) {
     return (
         <>
         <div>
-            ${paidTotal}, 
-            </div>
-            <div>
+        <h2>Paidorder component</h2>
+          
             Order Number: {order.orderID}, 
             </div>
             </>

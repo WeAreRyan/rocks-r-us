@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 
 export default function RockListItem({ rock, handleAddToOrder }) {
-  const [rockQty, setNewRockQty] = useState(1);
+  const [rockQty, setNewRockQty] = useState(1); 
   const [rockId ] = useState(rock._id)
 
   const addToOrder = (evt) => {

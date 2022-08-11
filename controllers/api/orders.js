@@ -6,7 +6,8 @@ module.exports = {
   addToCart, 
   setItemQtyInCart, 
   checkout, 
-  orderHistory
+  orderHistory, 
+  updateCartItem
 };
 
 // Creates new cart
@@ -21,6 +22,13 @@ async function addToCart(req, res) {
   await cart.addItemToCart(req.body); //req.params
   res.json(cart);
 }
+
+async function updateCartItem(req, res) {
+  const cart = await Order.getCart(req.user._id);
+  await cart.updateCartItem(req.body); //req.params
+  res.json(cart);
+}
+
 
 // Updates an item's qty in the cart
 async function setItemQtyInCart(req, res) {

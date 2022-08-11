@@ -70,7 +70,7 @@ export default function App() {
             />
             <Route path="/*" element= {<Navigate to="/rocks" />} />
           </Routes>
-          {showCart && <Cart order={cart} handleCheckout={handleCheckout} />}
+          {showCart && <Cart order={cart} handleCheckout={handleCheckout} handleAddToOrder={handleAddToOrder} setCart={setCart} />}
         </>
       ) : (
         <AuthPage setUser={setUser} />

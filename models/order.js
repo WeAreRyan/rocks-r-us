@@ -73,6 +73,24 @@ orderSchema.methods.addItemToCart = async function (orderItem) {
   return cart.save();
 };
 
+// updates item quantity in cart
+orderSchema.methods.updateCartItem = async function (orderItem) {
+  const cart = this;
+  console.log(this)
+  console.log(orderItem.rockId)
+  // Check if the item already exists in the cart
+  const lineItem = cart.lineItems.find((lineItem) =>
+    lineItem.item._id.equals(orderItem.rockId)
+  );
+  if (lineItem) {
+    // It already exists, so increase the qty
+    lineItem.qty = parseInt(lineItem.qty);
+  } else {
+    console.log(lineItem)
+  }
+  return cart.save();
+};
+
 // updates cart item total on initial item add to cart
 
 module.exports = mongoose.model("Order", orderSchema);
