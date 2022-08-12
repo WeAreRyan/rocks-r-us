@@ -17,11 +17,11 @@ export default function RockListItem({ rock, handleAddToOrder }) {
     return (
     <Card className="rockCard">
       <form className="form-group mt-2" onSubmit={addToOrder}>
-        <div>{rock.name}</div>
-        <div>{rock.rockType.name}</div>
+        <div className="rockName">{rock.name}</div>
+        <div className="rockType">Type: {rock.rockType.name}</div>
         <img className="rockPicture" src={rock.img} />
-        <div>${rock.price.toFixed(2)} lb</div>
-          <label>Quantity in pounds</label>
+        <div className="rockPrice">${rock.price.toFixed(2)} lb</div>
+          <label className="rockPrice">Quantity in pounds</label>
           <input
         className="rockQtyInput"
         type="number"
@@ -33,7 +33,7 @@ export default function RockListItem({ rock, handleAddToOrder }) {
         readOnly
         type='hidden'></input>
         <br />
-        <Button type="submit" className="btn-md p-3 mt-3 mb-3">
+        <Button type="submit" className="btn btn-info p-3 mt-3 mb-3 addCartButton">
           ADD TO CART
         </Button>
         </form>

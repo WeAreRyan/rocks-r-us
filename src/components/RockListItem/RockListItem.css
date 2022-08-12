@@ -8,18 +8,21 @@ input[type="number"] {
 }
 
 .rockCard {
-  background-image: linear-gradient(45deg, #4f3364, #989143);
+  background-image: linear-gradient(45deg, #631D4D, #818E31);
   display: -moz-grid;
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem;
   padding: 0.5rem 0.6rem;
-  border: 0.5rem solid rgba(145, 3, 3);
+  border: 0.5rem solid #1E0C18;
   border-radius: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
   position: relative;
   text-decoration: none;
+  color: #BCC870;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #1E0C18;
 }
 
 .rockPicture {
@@ -30,10 +33,26 @@ input[type="number"] {
   width: 85%;
 }
 
-.addToCartBtn {
+.addCartButton {
   padding: 5px;
+  font-weight: bold;
+  color: #1E0C18;
+  background-color: #BCC870;
 }
 
 .rockQtyInput {
-  width: 30%;
+  width: 25%;
+  height: 8%;
+  border: 0.2rem solid black;
+  border-radius: .5rem;
+}
+
+.rockName {
+  font-size: 2.5rem;
+}
+.rockType {
+  font-size: 1.5rem;
+}
+.rockPrice{
+  font-size: 1.5rem;
 }
