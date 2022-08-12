@@ -54,7 +54,7 @@ export default function App() {
             showCart={showCart}
             cartToggle={cartToggle}
           />
-          <h1>Rocks-R-Us</h1>
+          <div className="banner">Rocks-R-Us</div>
           <Routes>
             <Route
               path="/rocks"

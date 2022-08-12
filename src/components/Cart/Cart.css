@@ -6,3 +6,19 @@
     /* grid-auto-rows: 1fr; */
     grid-gap: 10px;
 }
+
+.orderDetailText {
+    color: #818E31;
+    font-size: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #1E0C18;
+}
+
+.checkoutButton{
+    margin: 1rem;
+    padding: .5rem 3rem .5rem 3rem;
+    color: #682252;
+    font-size: 2rem;
+    background-color: #818E31;
+    border: solid #1E0C18;
+}

@@ -1,3 +1,4 @@
+import './OrderHistory'
 import PaidOrder from "../../components/PaidOrder/PaidOrder"
 
 export default function OrderHistory( {orders} ) {
@@ -6,8 +7,8 @@ export default function OrderHistory( {orders} ) {
   ));
 
   return(
-    <>
+    <div className="completedOrder">
     {userOrderHistory}
-    </>
+    </div>
   )
 } 

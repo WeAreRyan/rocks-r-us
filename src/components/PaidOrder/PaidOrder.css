@@ -1,16 +1,27 @@
 .paidOrderBox {
-display: inline-grid;
-  background: white;
+  background: #1E2124;
   margin: 1rem 4rem 1rem 4rem;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(10rem);
-  grid-gap: 1rem;
-  border: 0.7rem solid rgba(145, 3, 3);
+  border: 0.7rem solid #BCC870;
   border-radius: 1rem;
 }
 
 .orderInfo {
-  position: top;
-  align-items: center;
+color: white;
+font-size: 1.3rem;
+margin-bottom: 1rem;
 }
+
+.paidOrderGrid {
+  display: inline-grid;
+  width: fill;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 10px;
+  padding: 0rem 2rem 0rem 2rem;
+}
+  /* grid-template-columns: repeat(10rem);
+  grid-gap: 1rem; */

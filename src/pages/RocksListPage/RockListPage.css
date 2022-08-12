@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
 .rockList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -7,18 +9,22 @@
   }
 
 .lotsOfRocks {
+  font-family: 'Bungee Inline', sans-serif;
   position: absolute;
   top: 20%;
   left: 10%;
   /* transform: translate(-50%, -50%); */
   z-index: -1;
-  font-size: 10rem;
+  font-size: 9rem;
   animation: spin;
   animation-duration: 2s;
   animation-delay: 1s;
   animation-iteration-count: 1;
   opacity: 0;
   margin: 0 25% 0 20%;
+  background: -webkit-linear-gradient(#00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @keyframes spin {
   0%,100% { opacity: 1 }
@@ -36,7 +42,7 @@
     z-index: 3;
   }
   75% {
-    transform: rotate(180deg);
+    transform: rotate(270deg);
     z-index: 3;
   }
   100% {

@@ -8,14 +8,14 @@ export default function PaidOrder({ order }) {
   ));
 
   return (
-    <>
+
       <div className="paidOrderBox">
-        <div className="orderInfo">
-        <h3>Order Number: {order.orderID}</h3>
-        <div>Order Items: {orderItems}</div>
-        <div>Order Total: {order.orderTotal.toFixed(2)}</div>
+        <div className="orderInfo">Order Number: {order.orderID}</div>
+        <div div className="orderInfo">Order Total: ${order.orderTotal.toFixed(2)}</div>
+        <div className="paidOrderGrid">{orderItems}</div>
+        
         </div>
-      </div>
-    </>
+        
+
   );
 }

@@ -1,4 +1,4 @@
-.loginForm {
+.signUpForm {
     margin: 2rem;
     border: 0.5rem solid #BCC870;
     border-radius: 1rem;
@@ -12,7 +12,7 @@
 }
 
 .authFormInput {
-    margin: .5rem;
+    margin: .1rem;
 }
 
 .authFormName {
@@ -21,4 +21,8 @@
     font-weight: bold;
     margin: 1.5rem;
     margin-top: 0rem;
+}
+
+.submitButton {
+    margin-top: 1rem;
 }

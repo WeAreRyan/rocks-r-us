@@ -25,13 +25,13 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div className="">
-    <div className="d-inline-flex Auth-form-container">
-      <form className="Auth-form" autoComplete="off" onSubmit={handleSubmit}>
+    <div className="d-inline-flex loginForm">
+    <div className="Auth-form-container">
+      <form className="Auth-form mb-3" autoComplete="off" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
+          <h3 className="Auth-form-title authFormName">Login</h3>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label className="authFormLabel">Email</label>
             <input
               type="text"
               name="email"
@@ -41,9 +41,10 @@ export default function LoginForm({ setUser }) {
               onChange={handleChange}
               required
             />
+            <hr />
           </div>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label className="authFormLabel">Password</label>
             <input
               type="password"
               name="password"
@@ -55,8 +56,8 @@ export default function LoginForm({ setUser }) {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
+            <button type="submit" className="btn btn-primary submitButton">
+              SUBMIT
             </button>
           </div>
         </div>

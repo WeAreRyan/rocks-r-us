@@ -27,7 +27,7 @@ input[type="number"] {
 
 .rockPicture {
   margin-top: 10%;
-  border: 0.3rem solid black;
+  border: 0.3rem solid #1E0C18;
   border-radius: 1rem;
   height: 160px;
   width: 85%;
@@ -35,9 +35,11 @@ input[type="number"] {
 
 .addCartButton {
   padding: 5px;
-  font-weight: bold;
   color: #1E0C18;
   background-color: #BCC870;
+  font-size: 1.2rem;
+  border: 2px solid #1E0C18;
+  border-radius: 1rem;
 }
 
 .rockQtyInput {

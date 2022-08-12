@@ -26,11 +26,11 @@ export default function CartLineItem({ lineItem, isPaid, handleAddToOrder, setCa
   return (
     <>
       <div className="cartItemCard">
-        <div style={{ color: "red" }}>{lineItem.item.name}</div>
+        <div className="itemName">{lineItem.item.name}</div>
         <img className="cartItemPicture" src={lineItem.item.img} />
 
-        <form className="form-group mt-2" onSubmit={updateOrder}>
-          <label>Item Quantity: </label>
+        <form className="form-group mt-3 pd-0" onSubmit={updateOrder}>
+          <label className="lineItemLabel">Item Quantity: </label>
           <br />
           <input
             className="itemQuantityInput"
@@ -40,14 +40,12 @@ export default function CartLineItem({ lineItem, isPaid, handleAddToOrder, setCa
           />
           <input value={rockId} readOnly type="hidden" />
           <br />
-          <Button type="submit" className="btn-md btn-success p-3 mt-3 mb-3">
-            UpdateTotal
+          <Button type="submit" className="btn-md btn-light p-3 mt-3 mb-3">
+            Update Quantity
           </Button>
         </form>
-
-        <div style={{ color: "red" }}>{lineItem.qty}</div>
-        <div style={{ color: "red" }}>Price: ${lineItem.item.price}</div>
-        <div style={{ color: "red" }}>Item Subtotal: ${lineItemSubtotal}</div>
+        <div className="lineItemLabel">Price: ${lineItem.item.price}</div>
+        <div className="lineItemLabel">Item Subtotal: ${lineItemSubtotal}</div>
       </div>
     </>
   );

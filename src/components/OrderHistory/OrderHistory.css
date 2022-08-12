@@ -1,0 +1,8 @@
+.completedOrder {
+    background: #1E2124;
+    margin: 1rem 4rem 1rem 4rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(10rem);
+    grid-gap: 1rem;
+}

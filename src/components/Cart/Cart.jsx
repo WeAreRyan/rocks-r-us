@@ -1,4 +1,5 @@
 import "./Cart.css"
+import Button from "react-bootstrap/Button";
 import CartLineItem from "../CartLineItem/CartLineItem";
 import { useEffect } from "react";
 
@@ -22,12 +23,12 @@ export default function Cart({
 
   return (
     <>
-      <h4>Order Number: {order.orderID}</h4>
-      <div className="cart">{lineItems}</div>
-      <div>Order Total: ${order.orderTotal.toFixed(2)}</div>
-      <button className="" onClick={handleCheckout}>
+      <div className="orderDetailText">Order Number: {order.orderID}</div>
+      <div className="orderDetailText">Order Total: ${order.orderTotal.toFixed(2)}</div>
+      <Button className="btn btn-light checkoutButton" onClick={handleCheckout}>
         CHECKOUT
-      </button>
+      </Button>
+      <div className="cart">{lineItems}</div>
     </>
   );
 }

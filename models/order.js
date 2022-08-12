@@ -61,7 +61,7 @@ orderSchema.methods.addItemToCart = async function (orderItem) {
   );
   if (lineItem) {
     // It already exists, so increase the qty
-    lineItem.qty = parseInt(orderItem.rockQty) + parseInt(lineItem.qty);
+    lineItem.qty = (orderItem.rockQty + parseInt(lineItem.qty));
   } else {
     const item = await mongoose.model("Item").findById(orderItem.rockId);
     cart.lineItems.push({ item });

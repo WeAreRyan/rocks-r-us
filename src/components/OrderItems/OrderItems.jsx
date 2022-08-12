@@ -9,6 +9,7 @@ export default function OrderItems({ lineItem }) {
       {/* <div class="item"> */}
       <div className="lineItemTile">
         <div>{lineItem.item.name}</div>
+        <div>Item Price: {lineItem.item.price.toFixed(2)}</div>
         <img className="lineItemImg" src={lineItem.item.img} />
         <div>Quantity: {lineItem.qty}</div>
         <div>Item total: {itemTotal}</div>

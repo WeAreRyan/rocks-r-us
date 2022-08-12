@@ -18,7 +18,8 @@ export default function AuthPage({ setUser }) {
       <h1>AuthPage</h1>
       {signUp && <SignUpForm setUser={setUser} signUp={signUp} />}
       {!signUp && <LoginForm setUser={setUser} signUp={signUp}/>}
-      <Button className="btn btn-success" onClick={signUpToggle}>{!signUp ? "SIGNUP" : "LOGIN"} </Button>
+      <br />
+      <Button className="btn-lg btn-success" onClick={signUpToggle}>{!signUp ? "SIGNUP" : "LOGIN"} </Button>
     </main>
   );
 }

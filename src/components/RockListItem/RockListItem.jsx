@@ -22,6 +22,7 @@ export default function RockListItem({ rock, handleAddToOrder }) {
         <img className="rockPicture" src={rock.img} />
         <div className="rockPrice">${rock.price.toFixed(2)} lb</div>
           <label className="rockPrice">Quantity in pounds</label>
+          <br />
           <input
         className="rockQtyInput"
         type="number"
@@ -33,7 +34,7 @@ export default function RockListItem({ rock, handleAddToOrder }) {
         readOnly
         type='hidden'></input>
         <br />
-        <Button type="submit" className="btn btn-info p-3 mt-3 mb-3 addCartButton">
+        <Button type="submit" className="btn btn-light p-3 mt-3 mb-3 addCartButton">
           ADD TO CART
         </Button>
         </form>

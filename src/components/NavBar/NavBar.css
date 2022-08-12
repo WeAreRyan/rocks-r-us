@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 .navBar {
     font-size: 1.1rem;
     font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
 }
