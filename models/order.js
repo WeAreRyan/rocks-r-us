@@ -1,3 +1,4 @@
+const { query } = require("express");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const itemSchema = require("./itemSchema");
@@ -54,37 +55,38 @@ orderSchema.statics.getCart = function (userId) {
 
 // adds an item to existing cart
 orderSchema.methods.addItemToCart = async function (orderItem) {
+  console.log(orderItem)
   const cart = this;
-  // Check if the item already exists in the cart
-  const lineItem = cart.lineItems.find((lineItem) =>
-    lineItem.item._id.equals(orderItem.rockId)
-  );
+  const lineItem = cart.lineItems.find(lineItem => {
+    console.log(lineItem.item._id, orderItem)
+    return lineItem.item._id.equals(orderItem.rockId)
+  });
   if (lineItem) {
     // It already exists, so increase the qty
-    lineItem.qty = (orderItem.rockQty + parseInt(lineItem.qty));
+    lineItem.qty = parseInt(lineItem.qty) + parseInt(orderItem.rockQty);
   } else {
     const item = await mongoose.model("Item").findById(orderItem.rockId);
+    item.qty = orderItem.RockQty
     cart.lineItems.push({ item });
   }
-  const newItem = await cart.lineItems.find((lineItem) =>
-    lineItem.item._id.equals(orderItem.rockId)
-  );
-  newItem.qty = parseInt(orderItem.rockQty);
+  // const newItem = await cart.lineItems.find((lineItem) =>
+  //   lineItem.item._id.equals(orderItem.rockId)
+  // );
+  // newItem.qty = parseInt(orderItem.rockQty);
   return cart.save();
 };
 
 // updates item quantity in cart
-orderSchema.methods.updateCartItem = function (orderItem) {
+orderSchema.methods.updateCartItem = async function (orderItem) {
   const cart = this;
-  console.log(this)
-  const lineItem = cart.lineItems.find((lineItem) =>
-    lineItem.item._id.equals(orderItem.rockId)
-  );
-  console.log(lineItem)
-  if (lineItem) {
-    lineItem.qty = parseInt(lineItem.qty);
+  const lineItem = cart.lineItems.find(lineItem => lineItem._id.equals(orderItem.rockId));
+  if (lineItem && orderItem.rockQty <= 0) {
+    lineItem.remove()
+  }
+  else if (lineItem) {
+    lineItem.qty = parseInt(orderItem.rockQty);
   } else {
-    
+    console.log(lineItem)
   }
   return cart.save();
 };
