@@ -12,8 +12,10 @@
 .Cart{
     border: 1rem solid #818E31;
     border-radius: 1rem;
+    padding-top: 1rem;
     padding-left: 5%;
     margin-bottom: 200px;
+
 }
 
 

@@ -34,7 +34,7 @@ export default function RocksListPage({ user, setUser, handleAddToOrder, setCart
   return (
     <>
       {/* <div className="lotsOfRocks">LOOK AT ALL THESE ROCKS!!!</div> */}
-      <div className={showCart && "col-8"}>
+      <div className={showCart && "col-8 sol-sm-4"}>
         <div className="scrollBox">
         <div className="rockList">
       <RockList rockItems={rockItems} cartToggleOn={cartToggleOn} showCart={showCart}

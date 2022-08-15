@@ -22,24 +22,19 @@ console.log(order)
     />
   ));
 
-//   const lineItems = order.lineItems.sort((a, b) => (a.updatedAt > b.updatedAt) ? 1 : -1) (
-//     <CartLineItem
-//     handleAddToOrder={handleAddToOrder}
-//     lineItem={item}
-//     isPaid={order.isPaid}
-//     key={item._id}
-//     setCart={setCart} 
-//   />
-// );
-
 
   return (
     <>
-      <div className="col-6 col-sm-4">
+      <div className="col-4 col-sm-4">
+      <div className="Cart">
         <div className="scrollBox">
-          <div className="Cart">
-            <div className="cartLabel">CART</div>
-            <div className="orderDetailText">Order Number: {order.orderID}</div>
+        {order.orderTotal <= 0 && <>
+        <div className="cartLabel">Your Cart is empty</div>
+          </>}
+
+        {order.orderTotal > 0 && <>
+          <div className="cartLabel">CART</div>
+        <div className="orderDetailText">Order Number: {order.orderID}</div>
             <div className="orderDetailText">
               Order Total: ${order.orderTotal.toFixed(2)}
             </div>
@@ -48,7 +43,7 @@ console.log(order)
               onClick={handleCheckout}
             >
               CHECKOUT
-            </Button>
+            </Button></>}
             <div className="container-fluid">
               <div className="row no-gutters">{lineItems}</div>
             </div>

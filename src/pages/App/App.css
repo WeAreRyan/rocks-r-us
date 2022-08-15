@@ -56,3 +56,14 @@ main {
 .scroll-y {
   overflow-y: scroll;
 }
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #1E0C18;
+}
+::-webkit-scrollbar-thumb {
+  background: #631D4D;
+}
