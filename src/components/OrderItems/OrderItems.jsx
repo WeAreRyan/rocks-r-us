@@ -1,5 +1,5 @@
 import "./OrderItems.css";
-import OrderItem from "../../components/OrderItem/OrderItem";
+
 
 export default function OrderItems({ lineItem }) {
   const itemTotal = (lineItem.qty * lineItem.item.price).toFixed(2);
@@ -8,10 +8,13 @@ export default function OrderItems({ lineItem }) {
 
       <div className="lineItemTile">
         <div>{lineItem.item.name}</div>
-        <div>Item Price: {lineItem.item.price.toFixed(2)}</div>
+        <div>Item Price: ${lineItem.item.price.toFixed(2)}</div>
+        <br />
         <img className="lineItemImg" src={lineItem.item.img} />
+        <br />
+        <br />
         <div>Quantity: {lineItem.qty}</div>
-        <div>Item total: {itemTotal}</div>
+        <div>Item total: ${itemTotal}</div>
       </div>
     </>
   );

@@ -23,12 +23,20 @@ export default function Cart({
 
   return (
     <>
+    <div className="col-6 col-sm-4">
+      <div className="scrollBox">
+      <div className="Cart">
+      <div className="cartLabel">CART</div>
       <div className="orderDetailText">Order Number: {order.orderID}</div>
       <div className="orderDetailText">Order Total: ${order.orderTotal.toFixed(2)}</div>
       <Button className="btn btn-light checkoutButton" onClick={handleCheckout}>
         CHECKOUT
       </Button>
-      <div className="cart">{lineItems}</div>
+      <div className="cartItems">{lineItems}</div>
+      </div>
+      </div>
+      </div>
+
     </>
   );
 }

@@ -14,14 +14,15 @@ input::-webkit-inner-spin-button {
 
 .cartItemCard {
     background-image: linear-gradient(45deg, #4f3364, #989143);
+    width: 90%;
     display: -moz-grid;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5rem;
-    padding: 0.5rem ;
+    /* margin: 0.5rem; 
+    padding: 0.5rem; */
     border: 0.5rem solid #818E31;
     border-radius: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     position: relative;
     text-decoration: none;

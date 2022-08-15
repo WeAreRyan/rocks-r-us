@@ -7,9 +7,10 @@ export default function OrderHistory( {orders} ) {
   ));
 
   return(
-
+<div className="orderHistory">
     <div className="completedOrder">
     {userOrderHistory}
+    </div>
     </div>
 
   )

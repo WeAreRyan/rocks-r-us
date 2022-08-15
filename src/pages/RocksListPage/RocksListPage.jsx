@@ -10,7 +10,7 @@ import RockList from "../../components/RockList/RockList";
 // import { eventNames } from '../../../models/rockType';
 
 
-export default function RocksListPage({ user, setUser, handleAddToOrder, setCart }) {
+export default function RocksListPage({ user, setUser, handleAddToOrder, setCart, showCart }) {
   const [rockItems, setRockItems] = useState([]);
 
   
@@ -33,11 +33,15 @@ export default function RocksListPage({ user, setUser, handleAddToOrder, setCart
 
   return (
     <>
-      <div className="lotsOfRocks">LOOK AT ALL THESE ROCKS!!!</div>
-      <div className="rockList">
+      {/* <div className="lotsOfRocks">LOOK AT ALL THESE ROCKS!!!</div> */}
+      <div className={showCart && "col-8"}>
+        <div className="scrollBox">
+        <div className="rockList">
       <RockList rockItems={rockItems}
       handleAddToOrder={handleAddToOrder}
        />
+       </div>
+       </div>
       </div>
     </>
   );

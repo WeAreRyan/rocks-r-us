@@ -55,22 +55,27 @@ export default function App() {
             cartToggle={cartToggle}
           />
           <div className="banner">Rocks-R-Us</div>
+          <hr />
+          <div className="container-fluid">
+            <div className="row mr-0">
           <Routes>
             <Route
               path="/rocks"
-              element={!showCart && <RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} />}
-            />
+              element={<RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} showCart={showCart} />}
+            /> 
             <Route
               path="/orders/new"
               element={!showCart && <NewOrderPage user={user} setUser={setUser} />}
             />
             <Route
               path="/orders/history"
-              element={!showCart && <OrderHistoryPage user={user} setUser={setUser} />}
+              element={<OrderHistoryPage user={user} setUser={setUser} showCart={showCart} />}
             />
             <Route path="/*" element= {<Navigate to="/rocks" />} />
           </Routes>
           {showCart && <Cart order={cart} handleCheckout={handleCheckout} handleAddToOrder={handleAddToOrder} setCart={setCart} />}
+          </div>
+          </div>
         </>
       ) : (
         <AuthPage setUser={setUser} />

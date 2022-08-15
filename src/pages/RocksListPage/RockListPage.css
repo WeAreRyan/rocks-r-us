@@ -3,10 +3,17 @@
 .rockList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
-    /* grid-auto-rows: 1fr; */
+    grid-template-rows: repeat(auto-fill, minmax(500px, 1fr)); 
     grid-gap: 10px;
+    width: fill;
   }
+
+.store {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vmin 2vmin;
+}
 
 .lotsOfRocks {
   font-family: 'Bungee Inline', sans-serif;

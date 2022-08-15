@@ -5,7 +5,7 @@ import OrderHistory from "../../components/OrderHistory/OrderHistory";
 import PaidOrder from "../../components/PaidOrder/PaidOrder";
 import userEvent from "@testing-library/user-event";
 
-export default function OrderHistoryPage({ handleAddToOrder, user }) {
+export default function OrderHistoryPage({ handleAddToOrder, user, showCart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(function () {
@@ -27,9 +27,12 @@ export default function OrderHistoryPage({ handleAddToOrder, user }) {
 
   return (
     <>
+    <div className={showCart && "col-8"}>
+    <div className="scrollBox">
       <div className="userOrderBanner">{user.name}'s Order History</div>
-      <hr />
       <OrderHistory orders={orders}/>
+      </div>
+      </div>
     </>
   );
 }
