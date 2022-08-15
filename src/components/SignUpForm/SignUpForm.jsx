@@ -77,7 +77,7 @@ export default class SignUpForm extends Component {
                   required
                 />
                 <hr />
-                <label className="authFormLabel">Confirm</label>
+                <label className="authFormLabel">Confirm Password</label>
                 <input
                   type="password"
                   className="form-control mt-1 authFormInput"

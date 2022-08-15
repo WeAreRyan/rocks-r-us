@@ -32,6 +32,11 @@ export default function App() {
       setShowCart(true);
     }
   }
+function cartToggleOn() {
+    if (!showCart) {
+      setShowCart(true);
+    } 
+  }
 
   async function handleAddToOrder(orderItem) {
     const updatedCart = await ordersAPI.addItemToCart(orderItem); // itemId
@@ -61,7 +66,7 @@ export default function App() {
           <Routes>
             <Route
               path="/rocks"
-              element={<RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} showCart={showCart} />}
+              element={<RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} showCart={showCart} cartToggleOn={cartToggleOn} />}
             /> 
             <Route
               path="/orders/new"

@@ -13,14 +13,14 @@ input::-webkit-inner-spin-button {
 }
 
 .cartItemCard {
-    background-image: linear-gradient(45deg, #4f3364, #989143);
-    width: 90%;
+    background-image: linear-gradient(45deg, #631D4D, #989143);
+    width: 45%;
     display: -moz-grid;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0.5rem; 
-    padding: 0.5rem; */
-    border: 0.5rem solid #818E31;
+    margin: 0.5rem; 
+    padding: 0.5rem;
+    border: 0.5rem solid #682252;
     border-radius: 1rem;
     font-size: 1.8rem;
     font-weight: bold;
@@ -30,6 +30,7 @@ input::-webkit-inner-spin-button {
 
   .lineItemLabel {
     color: #1E0C18;
+    font-size: 1.5rem;
   }
 
   .itemName {

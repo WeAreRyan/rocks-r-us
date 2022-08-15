@@ -80,7 +80,8 @@ orderSchema.methods.addItemToCart = async function (orderItem) {
 orderSchema.methods.updateCartItem = async function (orderItem) {
   const cart = this;
   const lineItem = cart.lineItems.find(lineItem => lineItem._id.equals(orderItem.rockId));
-  if (lineItem && orderItem.rockQty <= 0) {
+  console.log(orderItem)
+  if (orderItem.rockQty <= 0) {
     lineItem.remove()
   }
   else if (lineItem) {

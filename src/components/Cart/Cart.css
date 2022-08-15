@@ -10,19 +10,13 @@
     font-size: 2.5rem;
 }
 .Cart{
-    border: 1rem solid #BCC870;
+    border: 1rem solid #818E31;
     border-radius: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 5%;
+    margin-bottom: 200px;
 }
 
-.cartItems{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(500px, 1fr)); 
-    grid-gap: 10px;
-    width: fill;
-}
+
 
 .orderDetailText {
     color: #818E31;

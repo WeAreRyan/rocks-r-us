@@ -19,6 +19,7 @@ main {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  align-items: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,6 +31,7 @@ main {
 .scrollBox {
   height: 100vh;
   overflow-y: scroll;
+  padding-bottom: 15%;
 }
 
 .App-header {
