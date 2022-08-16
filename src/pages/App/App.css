@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 
 main {
   background-image: linear-gradient(45deg, #989143, #643348);
@@ -8,7 +8,7 @@ main {
   left: 0;
   bottom: 0;
   right: 0;
-  font-family: 'Anton', sans-serif
+  font-family: "Anton", sans-serif;
 }
 
 .App {
@@ -29,7 +29,7 @@ main {
 }
 
 .scrollBox {
-  height: 100vh;
+  height: 81vh;
   overflow-y: scroll;
   padding-bottom: 15%;
 }
@@ -48,9 +48,9 @@ main {
 .banner {
   font-size: 5rem;
   margin-top: 1.5rem;
-  font-family: 'Monoton', sans-serif;
+  font-family: "Monoton", sans-serif;
   font-weight: bold;
-  color: #1E0C18;
+  color: #1e0c18;
 }
 
 .scroll-y {
@@ -62,8 +62,8 @@ main {
   width: 15px;
 }
 ::-webkit-scrollbar-track {
-  background: #1E0C18;
+  background: #1e0c18;
 }
 ::-webkit-scrollbar-thumb {
-  background: #631D4D;
+  background: #631d4d;
 }

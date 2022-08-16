@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { getOrderHistory } from "../../utilities/orders-api";
-import "./OrderHistoryPage.css"
+import "./OrderHistoryPage.css";
 import OrderHistory from "../../components/OrderHistory/OrderHistory";
-import PaidOrder from "../../components/PaidOrder/PaidOrder";
-import userEvent from "@testing-library/user-event";
 
 export default function OrderHistoryPage({ handleAddToOrder, user, showCart }) {
   const [orders, setOrders] = useState([]);
@@ -17,21 +15,13 @@ export default function OrderHistoryPage({ handleAddToOrder, user, showCart }) {
     orderHistory();
   }, []);
 
-  // const userOrders = orders.map((order) => (
-  //   <PaidOrder
-  //     key={order._id}
-  //     order={order}
-  //     handleAddToOrder={handleAddToOrder}
-  //   />
-  // ));
-
   return (
     <>
-    <div className={showCart && "col-8"}>
-    <div className="scrollBox">
-      <div className="userOrderBanner">{user.name}'s Order History</div>
-      <OrderHistory orders={orders}/>
-      </div>
+      <div className={showCart && "col-8"}>
+        <div className="scrollBox">
+          <div className="userOrderBanner">{user.name}'s Order History</div>
+          <OrderHistory orders={orders} />
+        </div>
       </div>
     </>
   );

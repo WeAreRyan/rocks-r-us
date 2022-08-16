@@ -3,18 +3,18 @@ const Item = require("../../models/item");
 
 module.exports = {
   cart,
-  addToCart, 
-  setItemQtyInCart, 
-  checkout, 
-  orderHistory, 
-  updateCartItem
+  addToCart,
+  setItemQtyInCart,
+  checkout,
+  orderHistory,
+  updateCartItem,
 };
 
 // Creates new cart
 async function cart(req, res) {
-    const cart = await Order.getCart(req.user._id);
-    res.json(cart);
-  }
+  const cart = await Order.getCart(req.user._id);
+  res.json(cart);
+}
 
 // Adds item to the user cart
 async function addToCart(req, res) {
@@ -29,7 +29,6 @@ async function updateCartItem(req, res) {
   res.json(cart);
 }
 
-
 // Updates an item's qty in the cart
 async function setItemQtyInCart(req, res) {
   const cart = await Order.getCart(req.user._id);
@@ -42,14 +41,14 @@ async function checkout(req, res) {
   const cart = await Order.getCart(req.user._id);
   cart.isPaid = true;
   await cart.save();
+  console.log(cart);
   res.json(cart);
 }
 
 // Pulls all orders in a user's history
 
-
 async function orderHistory(req, res) {
- const orders = await Order.find({user: req.user._id, isPaid: true}).exec()   
- orders.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
- res.json(orders)
+  const orders = await Order.find({ user: req.user._id, isPaid: true }).exec();
+  orders.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  res.json(orders);
 }

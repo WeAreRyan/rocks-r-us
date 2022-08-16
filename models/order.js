@@ -53,45 +53,42 @@ orderSchema.statics.getCart = function (userId) {
   );
 };
 
-// adds an item to existing cart
+// adds an item to existing cart or updates item quantity
 orderSchema.methods.addItemToCart = async function (orderItem) {
-  console.log(orderItem)
   const cart = this;
-  const lineItem = cart.lineItems.find(lineItem => {
-    console.log(lineItem.item._id, orderItem)
-    return lineItem.item._id.equals(orderItem.rockId)
+  const lineItem = cart.lineItems.find((lineItem) => {
+    return lineItem.item._id.equals(orderItem.rockId);
   });
   if (lineItem) {
-    // It already exists, so increase the qty
-    lineItem.qty = parseInt(lineItem.qty) + parseInt(orderItem.rockQty);
+    lineItem.qty = lineItem.qty += parseInt(orderItem.rockQty);
   } else {
     const item = await mongoose.model("Item").findById(orderItem.rockId);
-    item.qty = orderItem.RockQty
+    item.qty = parseInt(orderItem.rockQty);
     cart.lineItems.push({ item });
+    const newItem = await cart.lineItems.find((lineItem) =>
+      lineItem.item._id.equals(orderItem.rockId)
+    );
+    newItem.qty = parseInt(orderItem.rockQty);
   }
-  // const newItem = await cart.lineItems.find((lineItem) =>
-  //   lineItem.item._id.equals(orderItem.rockId)
-  // );
-  // newItem.qty = parseInt(orderItem.rockQty);
   return cart.save();
 };
 
-// updates item quantity in cart
+// updates item quantity in cart or removes item from cart if qty=0
 orderSchema.methods.updateCartItem = async function (orderItem) {
   const cart = this;
-  const lineItem = cart.lineItems.find(lineItem => lineItem._id.equals(orderItem.rockId));
-  console.log(orderItem)
+  const lineItem = cart.lineItems.find((lineItem) =>
+    lineItem._id.equals(orderItem.rockId)
+  );
+
   if (orderItem.rockQty <= 0) {
-    lineItem.remove()
-  }
-  else if (lineItem) {
+    lineItem.remove();
+  } else if (lineItem) {
     lineItem.qty = parseInt(orderItem.rockQty);
   } else {
-    console.log(lineItem)
+    console.log(error);
   }
   return cart.save();
 };
 
-// updates cart item total on initial item add to cart
 
 module.exports = mongoose.model("Order", orderSchema);

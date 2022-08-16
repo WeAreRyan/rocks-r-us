@@ -1,22 +1,22 @@
 .paidOrderBox {
-  background: #1E2124;
+  background: #1e2124;
   margin: 1rem 4rem 1rem 4rem;
   padding: 1rem;
   display: grid;
-  border: 0.7rem solid #BCC870;
+  border: 0.7rem solid #bcc870;
   border-radius: 1rem;
   margin-bottom: 4rem;
 }
 
 .orderInfo {
-color: white;
-font-size: 1.3rem;
-margin-bottom: 1rem;
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .paidOrderGrid {
   display: inline-grid;
-  width: fill;
+  width: stretch;
   height: auto;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
@@ -24,5 +24,3 @@ margin-bottom: 1rem;
   grid-gap: 10px;
   padding: 0rem 2rem 0rem 2rem;
 }
-  /* grid-template-columns: repeat(10rem);
-  grid-gap: 1rem; */

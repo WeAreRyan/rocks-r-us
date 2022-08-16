@@ -16,9 +16,9 @@ export function updateCartItem(orderItem) {
 }
 
 // Updates the order's (cart's) isPaid property to true
-export function checkout() {
+export function checkout(user) {
   // Changing data on the server, so make it a POST request
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', user._id);
 }
 
 export function getOrderHistory() {

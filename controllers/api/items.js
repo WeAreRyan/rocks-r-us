@@ -2,12 +2,12 @@ const Item = require("../../models/item");
 
 module.exports = {
   index,
-  show
+  show,
 };
 
 async function index(req, res) {
   // populate rock type on return
-  const items = await Item.find({}).sort('name').populate('rockType').exec();
+  const items = await Item.find({}).sort("name").populate("rockType").exec();
   res.json(items);
 }
 

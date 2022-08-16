@@ -1,14 +1,15 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import * as ordersAPI from "../../utilities/orders-api";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
-import NewOrderPage from "../NewOrderPage/newOrderPage";
+import Footer from "../../components/Footer/Footer"
+import Home from "../Home/Home";
 import RocksListPage from "../RocksListPage/RocksListPage";
-import OrderHistoryPage from "../../pages/OrderHistoryPage/OrderHistoryPage"
+import OrderHistoryPage from "../../pages/OrderHistoryPage/OrderHistoryPage";
 import Cart from "../../components/Cart/Cart";
 
 export default function App() {
@@ -17,13 +18,16 @@ export default function App() {
   const [showCart, setShowCart] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(function () {
-    async function getCart() {
-      const cartData = await ordersAPI.getCart();
-      setCart(cartData);
-    }
-    getCart();
-  },[setCart]);
+  useEffect(
+    function () {
+      async function getCart() {
+        const cartData = await ordersAPI.getCart();
+        setCart(cartData);
+      }
+      getCart();
+    },
+    [showCart]
+  );
 
   function cartToggle() {
     if (showCart) {
@@ -32,21 +36,27 @@ export default function App() {
       setShowCart(true);
     }
   }
-function cartToggleOn() {
+  function cartToggleOn() {
     if (!showCart) {
       setShowCart(true);
-    } 
+    }
+  }
+  function cartToggleOff() {
+    if (showCart) {
+      setShowCart(null);
+    }
   }
 
   async function handleAddToOrder(orderItem) {
-    const updatedCart = await ordersAPI.addItemToCart(orderItem); // itemId
+    const updatedCart = await ordersAPI.addItemToCart(orderItem);
     setCart(updatedCart);
   }
 
   // checkout function, sets order status to isPaid: true
   async function handleCheckout() {
-    await ordersAPI.checkout();
-    navigate("/rocks");
+    const order = await ordersAPI.checkout(user._id);
+    cartToggleOff()
+    navigate("/orders/history");
   }
 
   return (
@@ -63,24 +73,58 @@ function cartToggleOn() {
           <hr />
           <div className="container-fluid">
             <div className="row mr-0">
-          <Routes>
-            <Route
-              path="/rocks"
-              element={<RocksListPage handleAddToOrder={handleAddToOrder} user={user} setUser={setUser} setCart={setCart} showCart={showCart} cartToggleOn={cartToggleOn} />}
-            /> 
-            <Route
-              path="/orders/new"
-              element={!showCart && <NewOrderPage user={user} setUser={setUser} />}
-            />
-            <Route
-              path="/orders/history"
-              element={<OrderHistoryPage user={user} setUser={setUser} showCart={showCart} />}
-            />
-            <Route path="/*" element= {<Navigate to="/rocks" />} />
-          </Routes>
-          {showCart && <Cart order={cart} handleCheckout={handleCheckout} handleAddToOrder={handleAddToOrder} setCart={setCart} />}
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Home
+                      user={user}
+                      setUser={setUser}
+                      cartToggleOff={cartToggleOff}
+                      order={cart}
+                      setCart={setCart}
+                      handleAddToOrder={handleAddToOrder}
+                      cartToggleOn={cartToggleOn}
+                      handleCheckout={handleCheckout}
+                    />
+                  }
+                />
+                <Route
+                  path="/rocks"
+                  element={
+                    <RocksListPage
+                      handleAddToOrder={handleAddToOrder}
+                      user={user}
+                      setUser={setUser}
+                      setCart={setCart}
+                      showCart={showCart}
+                      cartToggleOn={cartToggleOn}
+                    />
+                  }
+                />
+                <Route
+                  path="/orders/history"
+                  element={
+                    <OrderHistoryPage
+                      user={user}
+                      setUser={setUser}
+                      showCart={showCart}
+                    />
+                  }
+                />
+                <Route path="/*" element={<Navigate to="/" />} />
+              </Routes>
+              {showCart && (
+                <Cart
+                  order={cart}
+                  handleCheckout={handleCheckout}
+                  handleAddToOrder={handleAddToOrder}
+                  setCart={setCart}
+                />
+              )}
+            </div>
           </div>
-          </div>
+          <Footer />
         </>
       ) : (
         <AuthPage setUser={setUser} />

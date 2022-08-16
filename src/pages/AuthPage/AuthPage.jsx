@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./AuthPage.css"
+import "./AuthPage.css";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 export default function AuthPage({ setUser }) {
   const [signUp, setSignUp] = useState(null);
@@ -17,10 +17,12 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <div className="loginPage">
-      {signUp && <SignUpForm setUser={setUser} signUp={signUp} />}
-      {!signUp && <LoginForm setUser={setUser} signUp={signUp}/>}
-      <br />
-      <Button className="btn-lg btn-success" onClick={signUpToggle}>{!signUp ? "SIGNUP" : "LOGIN"} </Button>
+        {signUp && <SignUpForm setUser={setUser} signUp={signUp} />}
+        {!signUp && <LoginForm setUser={setUser} signUp={signUp} />}
+        <br />
+        <Button className="btn-lg btn-success" onClick={signUpToggle}>
+          {!signUp ? "SIGNUP" : "LOGIN"}{" "}
+        </Button>
       </div>
     </main>
   );

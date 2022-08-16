@@ -3,7 +3,7 @@ import OrderItems from "../OrderItems/OrderItems";
 
 export default function PaidOrder({ order }) {
   const lineItems = order.lineItems;
-  const checkoutDate = new Date(order.updatedAt).toDateString()
+  const checkoutDate = new Date(order.updatedAt).toDateString();
   const orderItems = lineItems.map((lineItem) => (
     <OrderItems key={lineItem._id} lineItem={lineItem} />
   ));

@@ -1,37 +1,40 @@
 .order aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cartLabel {
-    color: white;
-    font-size: 2.5rem;
+  color: white;
+  font-size: 2.5rem;
 }
-.Cart{
-    border: 1rem solid #818E31;
-    border-radius: 1rem;
-    padding-top: 1rem;
-    padding-left: 5%;
-    margin-bottom: 200px;
-
+.Cart {
+  border: 1rem solid #818e31;
+  border-radius: 1rem;
+  padding-top: 1rem;
+  padding-left: 5%;
+  padding-bottom: 3%;
+  height: auto;
 }
 
-
+.scrollBoxCart {
+  height: 81vh;
+  overflow-y: scroll;
+}
 
 .orderDetailText {
-    color: #818E31;
-    font-size: 1.5rem;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #1E0C18;
+  color: #818e31;
+  font-size: 1.5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #1e0c18;
 }
 
-.checkoutButton{
-    margin: 1rem;
-    padding: .5rem 3rem .5rem 3rem;
-    color: #682252;
-    font-size: 2rem;
-    background-color: #818E31;
-    border: solid #1E0C18;
+.checkoutButton {
+  margin: 1rem;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  color: #682252;
+  font-size: 2rem;
+  background-color: #818e31;
+  border: solid #1e0c18;
 }

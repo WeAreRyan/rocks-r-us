@@ -11,3 +11,10 @@
     height: 100vh;
     overflow-y: scroll;
 }
+
+.noOrderHistory {
+    /* border: 0.5rem solid #682252;
+    border-radius: 1rem; */
+    font-size: 2rem;
+    color: #682252;
+}

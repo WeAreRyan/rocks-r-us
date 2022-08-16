@@ -44,10 +44,10 @@ export default function CartLineItem({
     <>
       <div className="cartItemCard">
         <div className="itemName">{lineItem.item.name}</div>
-        <img className="cartItemPicture" src={lineItem.item.img} />
+        <img className="cartItemPicture" src={lineItem.item.img} alt="rock" />
 
         <form className="form-group mt-3 pd-0" onSubmit={updateOrder}>
-          <label className="lineItemLabel">Item Quantity: </label>
+          <label className="lineItemLabel">Item Quantity: {lineItem.qty}</label>
           <br />
           <input
             className="itemQuantityInput"
@@ -58,7 +58,7 @@ export default function CartLineItem({
           <input value={rockId} readOnly type="hidden" />
           <br />
           <Button type="submit" className="btn-md btn-light p-3 mt-3 mb-3">
-            Update Quantity
+            Set Quantity
           </Button>
         </form>
         <div className="lineItemLabel">Price: ${lineItem.item.price}</div>
