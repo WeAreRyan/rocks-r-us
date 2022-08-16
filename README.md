@@ -2,7 +2,7 @@
 
 React, HTML, CSS, JS, Express, MongoDB, Mongoose, Bootstraps
 
-<img src="https://i.imgur.com/JDGRCjP.png">
+<img src="https://i.imgur.com/E7kksbL.png">
 
 <br>
 
@@ -18,7 +18,7 @@ Welcome to Rocks-R-Us, a place for all your rocky needs. This web application ha
 ## Unsolved Problems
 </br>
 In that applications current state there are some issues regarding element sizing depending on the browser used and screen size. Additionally the user's cart does not rerender when checking out properly, currently the application navigates you to the order history page and hides the cart when checking out preventing this issue from being seen. 
-
+<img src="https://i.imgur.com/oh4F0jT.png">
 
 ## Next Steps
 <br>
