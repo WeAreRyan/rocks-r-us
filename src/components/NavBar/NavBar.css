@@ -5,3 +5,10 @@
   font-weight: bold;
   font-family: "DM Sans", sans-serif;
 }
+ .navLink {
+  color: #BCC870;
+ }
+
+ .navLinkLogout {
+  color: #682252
+ }

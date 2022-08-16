@@ -38,7 +38,7 @@ export default function Home({
             <div className="card m-auto mx-5 bg-secondary">
             <div>About the Developer</div>
               <img className="rounded mx-auto d-block" height="20%" width="20%" src="https://i.imgur.com/oiwOjNV.jpg" alt="dev" />
-              <div>Name: Ryan Okamoto</div>
+              <div>Ryan Okamoto</div>
               <div>"I've done that before, it'll be easy"</div>
               <a className="devLink" href="https://www.linkedin.com/in/ryan-okamoto-9a8b19222/" target="_blank">LinkedIn</a>
               <a className="devLink" href="https://github.com/WeAreRyan" target="_blank">GitHub</a>
