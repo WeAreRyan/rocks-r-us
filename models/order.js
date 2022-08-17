@@ -39,7 +39,7 @@ orderSchema.virtual("orderID").get(function () {
   return this.id.slice(-6).toUpperCase();
 });
 
-// price of total on a single item in cart
+// price of total on single item in cart
 lineItemSchema.virtual("extPrice").get(function () {
   return this.qty * this.item.price;
 });
@@ -89,6 +89,5 @@ orderSchema.methods.updateCartItem = async function (orderItem) {
   }
   return cart.save();
 };
-
 
 module.exports = mongoose.model("Order", orderSchema);

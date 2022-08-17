@@ -1,26 +1,28 @@
-import sendRequest from './send-request';
-const BASE_URL = '/api/orders';
+import sendRequest from "./send-request";
+const BASE_URL = "/api/orders";
 
 export function getCart() {
-    return sendRequest(`${BASE_URL}/cart`);
-  }
-
-export function addItemToCart(orderItem) { //itemId
-  console.log(orderItem)
-    return sendRequest(`${BASE_URL}/cart/items/${orderItem.rockId}`, 'POST', orderItem); //itemId
-  }
-
-export function updateCartItem(orderItem) {
-  console.log(orderItem)
-  return sendRequest(`${BASE_URL}/cart/update`, 'POST', orderItem); //itemId
+  return sendRequest(`${BASE_URL}/cart`);
 }
 
-// Updates the order's (cart's) isPaid property to true
+export function addItemToCart(orderItem) {
+  console.log(orderItem);
+  return sendRequest(
+    `${BASE_URL}/cart/items/${orderItem.rockId}`,
+    "POST",
+    orderItem
+  );
+}
+
+export function updateCartItem(orderItem) {
+  console.log(orderItem);
+  return sendRequest(`${BASE_URL}/cart/update`, "POST", orderItem);
+}
+
 export function checkout(user) {
-  // Changing data on the server, so make it a POST request
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', user._id);
+  return sendRequest(`${BASE_URL}/cart/checkout`, "POST", user._id);
 }
 
 export function getOrderHistory() {
-  return sendRequest(`${BASE_URL}/history`)
+  return sendRequest(`${BASE_URL}/history`);
 }

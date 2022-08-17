@@ -10,7 +10,7 @@ module.exports = {
 
 async function create(req, res) {
   try {
-    // creates and adds user to database
+    // create and add user to database
     const user = await User.create(req.body);
     const token = createJWT(user);
     res.json(token);

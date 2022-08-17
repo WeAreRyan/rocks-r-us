@@ -31,7 +31,6 @@ export default function RocksListPage({
 
   return (
     <>
-      {/* <div className="lotsOfRocks">LOOK AT ALL THESE ROCKS!!!</div> */}
       <div className={`${showCart ? "col-8 sol-sm-4" : "col-12 sol-sm-8"}`}>
         <div className="scrollBox">
           <div className="rockList">

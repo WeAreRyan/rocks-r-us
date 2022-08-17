@@ -6,7 +6,7 @@ import { getUser } from "../../utilities/users-service";
 import * as ordersAPI from "../../utilities/orders-api";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer";
 import Home from "../Home/Home";
 import RocksListPage from "../RocksListPage/RocksListPage";
 import OrderHistoryPage from "../../pages/OrderHistoryPage/OrderHistoryPage";
@@ -55,7 +55,7 @@ export default function App() {
   // checkout function, sets order status to isPaid: true
   async function handleCheckout() {
     const order = await ordersAPI.checkout(user._id);
-    cartToggleOff()
+    cartToggleOff();
     navigate("/orders/history");
   }
 

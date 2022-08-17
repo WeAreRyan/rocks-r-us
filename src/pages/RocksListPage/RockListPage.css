@@ -16,7 +16,7 @@
   margin: 3vmin 2vmin;
 }
 
-.lotsOfRocks {
+/* .lotsOfRocks {
   font-family: "Bungee Inline", sans-serif;
   position: absolute;
   top: 20%;
@@ -73,4 +73,4 @@
     transform: rotate(360deg);
     z-index: 3;
   }
-}
+} */

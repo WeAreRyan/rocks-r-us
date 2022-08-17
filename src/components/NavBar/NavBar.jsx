@@ -21,11 +21,15 @@ export default function NavBar({ user, setUser, showCart, cartToggle }) {
             Rocks-R-Us
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link className="navLink" href="/rocks">Checkout These Rocks</Nav.Link>
+            <Nav.Link className="navLink" href="/rocks">
+              Checkout These Rocks
+            </Nav.Link>
             <Nav.Link className="navLink" onClick={cartToggle}>
               {!showCart ? "Show Cart" : "Hide Cart"}
             </Nav.Link>
-            <Nav.Link className="navLink" href="/orders/history">Order History</Nav.Link>
+            <Nav.Link className="navLink" href="/orders/history">
+              Order History
+            </Nav.Link>
             <Nav.Link className="navLinkLogout" href="" onClick={handleLogOut}>
               LogOut
             </Nav.Link>

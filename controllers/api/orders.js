@@ -46,7 +46,6 @@ async function checkout(req, res) {
 }
 
 // Pulls all orders in a user's history
-
 async function orderHistory(req, res) {
   const orders = await Order.find({ user: req.user._id, isPaid: true }).exec();
   orders.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
