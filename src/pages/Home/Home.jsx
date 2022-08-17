@@ -32,7 +32,7 @@ export default function Home({
         <div className="row">
           <div className="col-6 col-sm-4">
             <div className="scrollBox">
-              <h3>About Us.. and our rocks</h3>
+              <h3 className="homePageBanner">About Us.. and our rocks</h3>
               <img
                 className="blurbImg"
                 src="https://images.unsplash.com/photo-1603947929333-7d19dd9a1533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
@@ -81,7 +81,7 @@ export default function Home({
           </div>
           <div className="col-3 col-sm-4">
             <div className="scrollBox px-5">
-              <h3>Welcome {user.name}! Check Out These Rocks!</h3>
+              <h3 className="homePageBanner">Welcome {user.name}! Check Out These Rocks!</h3>
               <RockList
                 rockItems={rockItems}
                 handleAddToOrder={handleAddToOrder}
